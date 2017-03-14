@@ -40,7 +40,7 @@ init-config:
 init-cluster-stg:
 	@gcloud container --project "$(GCLOUD_PROJECT_NAME)" clusters create "$(GCLOUD_CLUSTER_NAME)" --zone "$(GCLOUD_ZONE)" --machine-type "n1-standard-1" --image-type "GCI" --disk-size "100" --scopes "https://www.googleapis.com/auth/compute","https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --num-nodes "1" --network "default" --enable-cloud-logging --enable-cloud-monitoring
 
-init-image-stg: docker-build
+init-image-stg:
 	@docker tag $(IMAGE_NAME) $(GCLOUD_REGISTRY_PREFIX)/fibgo-stg
 	@gcloud docker -- push $(GCLOUD_REGISTRY_PREFIX)/fibgo-stg
 
