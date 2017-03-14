@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/uudashr/fibgo.svg?branch=master)](https://travis-ci.org/uudashr/fibgo)
-[![Coverage Status](https://coveralls.io/repos/github/uudashr/fibgo/badge.svg?branch=master)](https://coveralls.io/github/uudashr/fibgo?branch=master)
+[![Build Status](https://travis-ci.org/KurioApp/fibgo.svg?branch=master)](https://travis-ci.org/KurioApp/fibgo)
 
 # Fibonacci
 
@@ -73,6 +72,11 @@ $ fibgo-server --port 8080
 
 
 ## Cloud Deployment
+Set GCLOUD_SERVICE_KEY on travis environment variable
+```shell
+$ base64 gcloud-service-key.json
+```
+
 Make sure we create the cluster
 ```shell
 $ make init-cloud
