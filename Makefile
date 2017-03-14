@@ -49,4 +49,6 @@ init-deployment-stg:
 	@gcloud --quiet container clusters get-credentials $(GCLOUD_CLUSTER_NAME)
 	@kubectl create -f fibgo-app-stg.yaml --record
 
-init-cloud: init-config init-cluster-stg docker-build init-image-stg init-deployment-stg
+init-cloud: init-config docker-build init-image-stg init-deployment-stg
+
+init-cloud-all: init-config init-cluster-stg docker-build init-image-stg init-deployment-stg

@@ -79,7 +79,13 @@ $ base64 gcloud-service-key.json
 
 Make sure we create the cluster
 ```shell
+$ make init-cloud-all
+```
+
+or the cluster might be already created, then do
+```shell
 $ make init-cloud
 ```
+This will do the initialization without creating the cluster
 
 Then every successful Travis build, it will be automatically deploy the service.
