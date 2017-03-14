@@ -70,3 +70,12 @@ To run the service
 ```shell
 $ fibgo-server --port 8080
 ```
+
+
+## Cloud Deployment
+Make sure we create the cluster
+```shell
+$ make init-cloud
+```
+
+Then every successful Travis build, it will be automatically deploy the service.
